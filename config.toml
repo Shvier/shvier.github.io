@@ -1,4 +1,21 @@
 baseURL = 'https://shvier.github.io'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = "Barry's Site"
 theme = 'paper'
+paginate = 3
+
+[params]
+  twitter = 'shvier1894'
+  github = 'Shvier'
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "#"
+    weight = 10
+
+[services]
+  [services.twitter]
+    disableInlineCSS = true
