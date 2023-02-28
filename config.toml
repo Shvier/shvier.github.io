@@ -4,12 +4,18 @@ title = "Barry's Site"
 theme = 'paper'
 paginate = 3
 
+enableGitInfo = true
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  expiryDate = ['expiryDate']
+  lastmod = ['lastmod', ':fileModTime', ':git', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
+
 [params]
   twitter = 'shvier1894'
   github = 'Shvier'
 
 [menu]
-
   [[menu.main]]
     identifier = "about"
     name = "About"
