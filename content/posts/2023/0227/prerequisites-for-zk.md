@@ -38,5 +38,33 @@ A group has the following properties:
 ### e.g.
 
 * \\(\mathbb Q\\) under \\(+\\) operation is a group.
-* 
 
+## Generator
+
+## Order
+
+## Subgroup
+
+## Polynomial
+
+# Cryptography
+
+## Prime Number
+
+## Discrete Logarithm
+
+## Diffie-Hellman Key Exchange
+
+## Fiat-Shamir Heuristic
+
+## Safe Prime
+> A safe prime is a prime number \\(p\\), s.t. \\(p=2q+1\\) where q is also prime.
+
+### e.g.
+
+* \\(5\\) is a safe prime (\\(5=2\times2+1\\))
+* \\(7\\) is a safe prime (\\(7=2\times3+1\\))
+
+## Elliptic Curve
+
+## Pairing
