@@ -19,7 +19,7 @@ enableGitInfo = true
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "#"
+    url = "/about/"
     weight = 10
 
 [services]
