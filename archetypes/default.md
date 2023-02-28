@@ -7,6 +7,6 @@ categories = [
 ]
 series = [
 ]
-draft = true
+isDraft = true
 +++
 

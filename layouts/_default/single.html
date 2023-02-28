@@ -19,7 +19,7 @@
         </span>        
       <time>&nbspModified on {{ .Date | time.Format ":date_medium" }}</time>
       {{ end }}
-      {{ if .Draft }}
+      {{ if .Params.isDraft }}
       &nbsp•&nbsp
       <span class="material-symbols-outlined" style="font-size: 1.5em;">
         edit_document
