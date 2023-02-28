@@ -9,8 +9,7 @@
       <time>Created on {{ .Date | time.Format ":date_medium" }}</time>
       {{ end }}<!---->
       {{ if .Lastmod }}
-      &nbsp•&nbsp      
-      <time>&nbspModified on {{ .Lastmod | time.Format ":date_medium" }}</time>
+      <time>&nbsp•&nbspModified on {{ .Lastmod | time.Format ":date_medium" }}</time>
       {{ end }}
       {{ if .Params.isDraft }}
       &nbsp•&nbspDraft
