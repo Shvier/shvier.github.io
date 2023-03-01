@@ -94,7 +94,7 @@ Safe prime features many useful properties in terms of finding the above concept
 | 5 | 5 | 4 | 6 | 2 | 3 | 1 |
 | 6 | 6 | 1 | 6 | 1 | 6 | 1 |
 
-It's easy to find that the possible orders exist in (\\{1, 2, 3, 6\\}\\) for all elements excluding \\(1\\). Recall the definition of safe prime, the orders are corresponding to \\(\\{1, 2, {{p-1}\over 2}, p-1\\}\\). This situation never happens if we choose a non-safe prime. 
+It's easy to find that the possible orders exist in \\(\\{1, 2, 3, 6\\}\\) for all elements excluding \\(1\\). Recall the definition of safe prime, the orders are corresponding to \\(\\{1, 2, {{p-1}\over 2}, p-1\\}\\). This situation never happens if we choose a non-safe prime. 
 
 Another interesting finding is all the single element having order \\({p-1}\over 2\\) is also a generator of the subgroup they combine (like the chart below).
 
