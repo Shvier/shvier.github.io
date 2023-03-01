@@ -112,12 +112,19 @@ With the help of the above findings, we can produce a subgroup \\(\mathbb G_q\\)
     * This indicates \\(g^q\pmod{p}=1\rightarrow g^n\pmod{p}=g^{n\pmod{q}}\pmod{p}\\).
 * Finding the inverse of any element is efficient: \\(g^{-1}\pmod{p}=g^{q-1}\pmod p\\).
 
-
 ## Part 2
 
-### Discrete Logarithm
-
 ### Diffie-Hellman Key Exchange
+> Diffie-Hellman key exchange allows multiple parties to exchange cryptographic keys over a public channel.
+
+Assume \\(A\\) and \\(B\\) want to exchange their key and make an agreement on the session key, i.e., \\(A: g, x\\), \\(B: g, y\\), and the session key will be \\(g^{xy}\\). They can achieve their goal through the following steps:
+1. \\(A\\) -> \\(B\\): \\(g^x\\)
+2. \\(B\\) -> \\(A\\): \\(g^y\\)
+3. \\(A\\) and \\(B\\) can compute the session key respectively: \\((g^x)^y\\),  \\((g^y)^x\\)
+
+The security of DH holds because it's infeasible to compute \\(g^{xy}\\) when given \\(g^x\\) and \\(g^y\\). This is called Computational Diffie-Hellman (CDH). Another related assumption is Decisional Diffie-Hellman (DDH): determine whether \\(z\\) is equal to \\(g^{xy}\\) given \\(g^x,g^y,z\\). These two assumptions are based on the hardness of the Discrete Logarithm Problem (DLP): find \\(x\\) where \\(g^x=n\\) when given \\(g, n\\).
+
+### Discrete Logarithm
 
 ### Polynomial
 
