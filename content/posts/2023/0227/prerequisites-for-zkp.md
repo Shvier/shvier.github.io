@@ -1,5 +1,5 @@
 +++
-title = 'Prerequisites for ZK'
+title = 'Prerequisites for Zero-Knowledge Proof'
 date = 2023-02-27T16:49:24-05:00
 tags = [
     "Cryptography",
@@ -124,9 +124,15 @@ Assume \\(A\\) and \\(B\\) want to exchange their key and make an agreement on t
 
 The security of DH holds because it's infeasible to compute \\(g^{xy}\\) when given \\(g^x\\) and \\(g^y\\). This is called Computational Diffie-Hellman (CDH). Another related assumption is Decisional Diffie-Hellman (DDH): determine whether \\(z\\) is equal to \\(g^{xy}\\) given \\(g^x,g^y,z\\). These two assumptions are based on the hardness of the Discrete Logarithm Problem (DLP): find \\(x\\) where \\(g^x=n\\) when given \\(g, n\\), considered as computational hardness assumption.
 
-### Discrete Logarithm
+### Proof of Knowledge
+> Assume there're a prover \\(P\\) and a verifier \\(V\\), s.t. \\(P\\) wants to convice \\(V\\) that \\(P\\) knows something. If \\(P\\) succeeds in proving the knowledge without revealing the secrect itself (\\(V\\) also cannot extract the secrect through the proof that \\(P\\) sends), we call this zero-knowledge proof.
 
-### Polynomial
+#### e.g.
+* A simple proof of knowledge is \\(P\\) has the private key corresponding to the public key, then \\(P\\) can convince \\(V\\) by signing a message to let \\(V\\) accept the proof.
+
+
+
+### Schwartz–Zippel Lemma
 
 ### Lagrange Interpolation
 
@@ -135,5 +141,3 @@ The security of DH holds because it's infeasible to compute \\(g^{xy}\\) when gi
 ### Elliptic Curve
 
 ### Pairing
-
-### Schwartz–Zippel Lemma
