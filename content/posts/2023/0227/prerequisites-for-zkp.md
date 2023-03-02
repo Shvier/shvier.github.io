@@ -128,11 +128,20 @@ The security of DH holds because it's infeasible to compute \\(g^{xy}\\) when gi
 > Assume there're a prover \\(P\\) and a verifier \\(V\\), s.t. \\(P\\) wants to convice \\(V\\) that \\(P\\) knows something. If \\(P\\) succeeds in proving the knowledge without revealing the secrect itself (\\(V\\) also cannot extract the secrect through the proof that \\(P\\) sends), we call this zero-knowledge proof.
 
 #### e.g.
-* A simple proof of knowledge is \\(P\\) has the private key corresponding to the public key, then \\(P\\) can convince \\(V\\) by signing a message to let \\(V\\) accept the proof.
+* A simple example of proof of knowledge is \\(P\\) has the private key corresponding to the public key, then \\(P\\) can convince \\(V\\) by signing a message to let \\(V\\) accept the proof.
 
-
+Practically, we mathematically design the proof system, e.g., \\(P\\) proves s/he knows a polynomial by giving the root of the polynomial, which holds due to Schwartz-Zippel Lemma.
 
 ### Schwartz–Zippel Lemma
+> Assume a non-zero polynomial \\(f(x_1,x_2,\dots,x_n)\\) has total degree \\(d\\), and there's a finite field \\(S\\). If we choose \\(r_1,r_2,\dots,r_n\\) randomly and independently from \\(S\\), then the probability that \\(f(r_1,r_2,\dots,r_n)=0\\) is \\(\leq{d\over{|S|}}\\).
+
+#### e.g.
+* Let \\(S=\mathbb F_5, \\{0,1,2,3,4\\}\\). Let \\(f(x)=x-1\\). Following the lemma, the probability that (f(r)\\) is equal to zero is \\(\leq{1\over 5}\\). We can list all the possible values: (1\\). The probability is \\(={1\over 5}\\).
+* Let \\(S=\mathbb F_5, \\{0,1,2,3,4\\}\\). Let \\(f(x,y)=x(x+y)\\). Following the lemma, the probability that (f(r,s)\\) is equal to zero is \\(\leq{2\over 5}\\). We can list all the possible values: \\((0,1),(0,2),(0,3),(0,4),(1,4),(2,3),(3,2),(4,1)\\). The probability is \\(8\over 25\\), which is \\(\lt{2\over 5}\\).
+
+In fact, this is the main idea of how the interactive proof system achieves soundness: if the statement is false, the probability of the prover can convince the verifier is negligible. Normally the field used in the system is much bigger than \\(d\\), resulting in the soundness error being close to zero.
+
+### Polynomial Commitment
 
 ### Lagrange Interpolation
 
