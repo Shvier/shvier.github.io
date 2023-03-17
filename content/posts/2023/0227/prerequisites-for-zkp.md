@@ -152,6 +152,7 @@ In fact, this is the main idea of how the interactive proof system achieves soun
   4. Now \\(V\\) can verify the proof by checking the equality of \\(g^\sigma\\) and \\(h^ea\\).
 
 ### Fiat-Shamir Heuristic
+> Fiat-Shamir is a heuristic method to make \\(\Sigma\\)-protocols non-interactive. The main idea is using some hash function running over a random oracle to generate \\(a\\), and computing \\(e\leftarrow RO(x,a)\\) as the challenge. Thus the protocol can proceed: \\(P\\) sends \\(a\\), \\(e\\), and \\(\sigma\\) to \\(V\\).
 
 ### Polynomial Commitment
 
