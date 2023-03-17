@@ -141,11 +141,21 @@ Practically, we mathematically design the proof system, e.g., \\(P\\) proves s/h
 
 In fact, this is the main idea of how the interactive proof system achieves soundness: if the statement is false, the probability of the prover can convince the verifier is negligible. Normally the field used in the system is much bigger than \\(d\\), resulting in the soundness error being close to zero.
 
+### Sigma Protocols
+> A \\(\Sigma-protocol\\) features a way to prove a knowledge without disclosing the secret ifself. It follows 3 steps: commitment, challenge, and response. First, the prover sends a commitment of a random value to the verifier. Then the verifier generates another random value as the challenge and sends it to the prover. Finally, the prover generates a response with combining the random value in step 1, the challenge sent by the verifier, and the witness (the value being used to prove the knowledge), and sends the response to the verifier. After some computation, the verifier will accept or reject the proof.
+
+#### e.g.
+* Schonrr Protocol
+  1. \\(P\\) wants to prove that s/he knows a value \\(x\\), s.t. \\(h=g^x\\). Given \\(h\\) and \\(g\\), it's infeasible to obtain \\(x\\) due to DLP. In order to achieve zero knowledge, \\(P\\) generates a random value \\(r\in\mathbb Z_p\\) and produces a value \\(a\\), s.t. \\(a=g^r\pmod{p}\\). Then \\(P\\) sends \\(a\\) to \\(V\\).
+  2. \\(V\\) generates a challenge value \\(e\in\mathbb Z_p\\) and sends it to \\(P\\).
+  3. \\(P\\) creates a response \\(\sigma\\), s.t. \\(\sigma\leftarrow ex+r\\), and sends the response to \\(V\\).
+  4. Now \\(V\\) can verify the proof by checking the equality of \\(g^\sigma\\) and \\(h^ea\\).
+
+### Fiat-Shamir Heuristic
+
 ### Polynomial Commitment
 
 ### Lagrange Interpolation
-
-### Fiat-Shamir Heuristic
 
 ### Elliptic Curve
 
