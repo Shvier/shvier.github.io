@@ -136,7 +136,7 @@ Practically, we mathematically design the proof system, e.g., \\(P\\) proves s/h
 > Assume a non-zero polynomial \\(f(x_1,x_2,\dots,x_n)\\) has total degree \\(d\\), and there's a finite field \\(S\\). If we choose \\(r_1,r_2,\dots,r_n\\) randomly and independently from \\(S\\), then the probability that \\(f(r_1,r_2,\dots,r_n)=0\\) is \\(\leq{d\over{|S|}}\\).
 
 #### e.g.
-* Let \\(S=\mathbb F_5, \\{0,1,2,3,4\\}\\). Let \\(f(x)=x-1\\). Following the lemma, the probability that (f(r)\\) is equal to zero is \\(\leq{1\over 5}\\). We can list all the possible values: (1\\). The probability is \\(={1\over 5}\\).
+* Let \\(S=\mathbb F_5, \\{0,1,2,3,4\\}\\). Let \\(f(x)=x-1\\). Following the lemma, the probability that \\(f(r)\\) is equal to zero is \\(\leq{1\over 5}\\). We can list all the possible values: \\(1\\). The probability is \\(={1\over 5}\\).
 * Let \\(S=\mathbb F_5, \\{0,1,2,3,4\\}\\). Let \\(f(x,y)=x(x+y)\\). Following the lemma, the probability that (f(r,s)\\) is equal to zero is \\(\leq{2\over 5}\\). We can list all the possible values: \\((0,1),(0,2),(0,3),(0,4),(1,4),(2,3),(3,2),(4,1)\\). The probability is \\(8\over 25\\), which is \\(\lt{2\over 5}\\).
 
 In fact, this is the main idea of how the interactive proof system achieves soundness: if the statement is false, the probability of the prover can convince the verifier is negligible. Normally the field used in the system is much bigger than \\(d\\), resulting in the soundness error being close to zero.
