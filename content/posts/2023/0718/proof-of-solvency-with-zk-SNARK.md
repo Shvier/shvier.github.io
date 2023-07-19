@@ -3,7 +3,9 @@ title = 'Proof of Solvency with zk SNARKs, Re-explained'
 date = 2023-07-17T17:01:02-04:00
 tags = [
 ]
-categories = [
+tags = [
+    "Solvency",
+    "SNARK"
 ]
 series = [
 ]
