@@ -30,11 +30,11 @@ On the contrary, in Bob's implementation, the curve is Miyaji–Nakabayashi–Ta
 
 Based on the above exploration, the solution is clear to be found: compute the \\((x,-y)\\) by inverting \\(s\cdot{G}\\) and hash the result to get the new `nullifier`.
 
-    ```rust
+```rust
     let inv_secret = -MNT6BigFr::from(leaked_secret.into_bigint());
     let secret_hack = MNT4BigFr::from(inv_secret.into_bigint());
     let nullifier_hack = <LeafH as CRHScheme>::evaluate(&leaf_crh_params, [secret_hack]).unwrap();
-    ```
+```
 
 [^1]: https://zips.z.cash/protocol/protocol.pdf
 [^2]: https://en.wikipedia.org/wiki/Edwards_curve
