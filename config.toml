@@ -2,7 +2,7 @@ baseURL = 'https://shvier.github.io'
 languageCode = 'en-us'
 title = "Barry's Site"
 theme = 'paper'
-paginate = 3
+paginate = 10
 
 enableGitInfo = true
 [frontmatter]
@@ -14,6 +14,7 @@ enableGitInfo = true
 [params]
   twitter = 'shvier1894'
   github = 'Shvier'
+  math = true
 
 [menu]
   [[menu.main]]
