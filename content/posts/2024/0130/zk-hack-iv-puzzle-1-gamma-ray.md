@@ -29,6 +29,7 @@ On the contrary, in Bob's implementation, the curve is Miyaji–Nakabayashi–Ta
 ## The Solution
 
 Based on the above exploration, the solution is clear to be found: compute the \\((x,-y)\\) by inverting \\(s\cdot{G}\\) and hash the result to get the new `nullifier`.
+
     ```rust
     let inv_secret = -MNT6BigFr::from(leaked_secret.into_bigint());
     let secret_hack = MNT4BigFr::from(inv_secret.into_bigint());
