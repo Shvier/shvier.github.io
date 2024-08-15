@@ -87,7 +87,7 @@ $$
 4. In order to let Bob evaluate the AND gate, Bob needs to know the private key of Alice's input and his input. For Bob's key, Alice cannot send the key to Bob directly because this will tell Alice what Bob's input is. Recall the above oblivious transfer, so Alice and Bob run a 1-out-of-2 oblivious transfer for $(k_r^0,k_r^0)$. For Alice's key, she simply sends the key to Bob.
 5. Bob decrypts the ciphertexts with the two keys he received. He should compute one correct message and others are garbage.
 
-Now we can extend the above protocol for the AND gate to any function. Suppose Alice and Bob want to evaluate a polynomial $f(x,y)$, where $x$ is Alice's input, $y$ is Bob's input, and $f$ is a general function: $\{0,1\}^n\times\{0,1\}^n\rightarrow\{0,1\}^*$.
+Now we can extend the above protocol for the AND gate to any function. Suppose Alice and Bob want to evaluate a polynomial $f(x,y)$, where $x$ is Alice's input, $y$ is Bob's input, and $f$ is a general function: $\\{0,1\\}^n\times\\{0,1\\}^n\rightarrow\\{0,1\\}^*$.
 
 1. Alice converts the evaluations of $f$ into a lookup table such that the first column is the possible values of Alice's input $x_i$, the second column is the possible values of Bob's input $y_j$, and the third column is the evaluation of $f(x_i,y_j)$.
 2. Alice encrypts the lookup table by randomly generating a key to each possible input $x$ and $y$ like she did for the AND gate table.
