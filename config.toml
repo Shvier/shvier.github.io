@@ -12,7 +12,7 @@ enableGitInfo = true
   publishDate = ['publishDate', 'date']
 
 [params]
-  twitter = 'shvier1894'
+  twitter = 'barryllvm'
   github = 'Shvier'
   math = true
 
