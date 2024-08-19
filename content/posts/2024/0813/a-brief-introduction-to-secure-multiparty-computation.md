@@ -42,17 +42,17 @@ Next, we evaluate $f$ for each party. Specifically, we compute $f(1),f(2),\dots,
 
 The oblivious transfer is a cryptographic protocol involving two parties, the sender $\mathcal{S}$ and the receiver $\mathcal{R}$, where $\mathcal{S}$ holds some secrets and $\mathcal{R}$ wants to retrieve one or more secrets while $\mathcal{S}$ does not know which secrets $\mathcal{R}$ chose. Here we will see the simplest version, a 1-out-of-2 oblivious transfer based on the discrete logarithm assumption (DLA), a.k.a, Bellare-Micali oblivious transfer[^1].
 
-Let $\mathbb{G}$ be a group of prime order $p$ with a generator $g$. Let $H$ be a hash function. $\mathcal{S}$ holds two messages $m_0$ and $m_1$, and $\mathcal{R}$ has a selector bit $b\in\\{0,1\\}$. $\mathcal{R}$ wants to retrieve one of the messages by the selector $b$. $\mathcal{S}$ and $\mathcal{R}$ run the protocol as follows:
+Let $\mathbb{G}$ be a group of prime order $p$ with a generator $g$. Let $H$ be a hash function. $\mathcal{S}$ holds two messages $m_0$ and $m_1$, and $\mathcal{R}$ has a selector bit $b\in\{0,1\}$. $\mathcal{R}$ wants to retrieve one of the messages by the selector $b$. $\mathcal{S}$ and $\mathcal{R}$ run the protocol as follows:
 
-1. $\mathcal{S}$ randomly generates $c\stackrel{rand}{\leftarrow}\mathbb{G}_p$ and sends $c$ to $\mathcal{R}$.
-2. $\mathcal{R}$ randomly chooses $k\stackrel{rand}{\leftarrow}\mathbb{Z}_p$ as the private key of the ElGamal private key, and computes two ElGamal public keys
+1. $\mathcal{S}$ randomly generates $c\stackrel{\$}{\leftarrow}\mathbb{G}_p$ and sends $c$ to $\mathcal{R}$.
+2. $\mathcal{R}$ randomly chooses $k\stackrel{\$}{\leftarrow}\mathbb{Z}_p$ as the private key of the ElGamal private key, and computes two ElGamal public keys
 
 $$y_b\leftarrow{g^k}$$
 $$y_{1-b}\leftarrow\frac{c}{g^k}$$
 
 3. $\mathcal{R}$ sends $y_0,y_1$ to $\mathcal{S}$.
 4. $\mathcal{S}$ checks if $c$ equals $y_0\cdot{y_1}$. If not, $\mathcal{S}$ aborts the protocol.
-5. $\mathcal{S}$ generates $r_0,r_1\stackrel{rand}{\leftarrow}\mathbb{Z}_p$ and computes two ElGamal ciphertexts using the public keys $y_0,y_1$, denoted by $c_0\leftarrow{(g^{r_0},H(y_0^{r_0})\oplus{m_0})}$ and $c_1\leftarrow{(g^{r_1},H(y_1^{r_1})\oplus{m_1})}$. $\mathcal{S}$ sends $c_0,c_1$ to $\mathcal{R}$.
+5. $\mathcal{S}$ generates $r_0,r_1\stackrel{\$}{\leftarrow}\mathbb{Z}_p$ and computes two ElGamal ciphertexts using the public keys $y_0,y_1$, denoted by $c_0\leftarrow{(g^{r_0},H(y_0^{r_0})\oplus{m_0})}$ and $c_1\leftarrow{(g^{r_1},H(y_1^{r_1})\oplus{m_1})}$. $\mathcal{S}$ sends $c_0,c_1$ to $\mathcal{R}$.
 6. $\mathcal{R}$ parses $c_b=(v_l,v_r)$ and decrypts $c_0,c_1$ using the knowledge of $k$: $m_b=H(v_l^k)\oplus{v_r}$.
 
 Now $\mathcal{R}$ successfully retrieved $m_b$ and $\mathcal{S}$ does not know what $b$ is.
@@ -87,7 +87,7 @@ $$
 4. In order to let Bob evaluate the AND gate, Bob needs to know the private key of Alice's input and his input. For Bob's key, Alice cannot send the key to Bob directly because this will tell Alice what Bob's input is. Recall the above oblivious transfer, so Alice and Bob run a 1-out-of-2 oblivious transfer for $(k_r^0,k_r^0)$. For Alice's key, she simply sends the key to Bob.
 5. Bob decrypts the ciphertexts with the two keys he received. He should compute one correct message and others are garbage.
 
-Now we can extend the above protocol for the AND gate to any function. Suppose Alice and Bob want to evaluate a polynomial $f(x,y)$, where $x$ is Alice's input, $y$ is Bob's input, and $f$ is a general function: $\\{0,1\\}^n\times\\{0,1\\}^n\rightarrow\\{0,1\\}^*$.
+Now we can extend the above protocol for the AND gate to any function. Suppose Alice and Bob want to evaluate a polynomial $f(x,y)$, where $x$ is Alice's input, $y$ is Bob's input, and $f$ is a general function: $\{0,1\}^n\times\{0,1\}^n\rightarrow\{0,1\}^*$.
 
 1. Alice converts the evaluations of $f$ into a lookup table such that the first column is the possible values of Alice's input $x_i$, the second column is the possible values of Bob's input $y_j$, and the third column is the evaluation of $f(x_i,y_j)$.
 2. Alice encrypts the lookup table by randomly generating a key to each possible input $x$ and $y$ like she did for the AND gate table.
