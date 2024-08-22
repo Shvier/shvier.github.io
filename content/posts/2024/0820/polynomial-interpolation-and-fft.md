@@ -7,7 +7,7 @@ categories = [
 ]
 series = [
 ]
-isDraft = true
+isDraft = false
 +++
 
 A polynomial can be represented in two forms: the coefficients, and the evaluations (or point-value). Polynomial interpolation is to construct polynomial from the point values. There are three well-known ways to interpolate a polynomial: the Lagrange interpolation, the Newton interpolation, and the Vandermonde matrix. The biggest difference between Lagrange and Newton is Newton's is faster for incremental interpolation while Lagrange's is more efficient for the same set of points. However, the approaches of Lagrange and Newton take $O(n^2)$ time and Vandermonde takes $O(n^3)$, but the time complexity can be boosted to $O(n\log{n})$ with the help of the fast Fourier transform (FFT), strictly, the inverse FFT (IFFT).
@@ -211,4 +211,4 @@ y_1
 \end{bmatrix}
 $$
 
-Therefore, the implementation of the IFFT is quite clear: run the FFT for $\{y_i\}$ first, then let each element of \{y_i\} multiply the multiplicative inverse of $n$ modulo the domain (337 for the above example). (Remember to reorder $\{y_i\}$)
+Therefore, the implementation of the IFFT is quite clear: run the FFT for $\{y_i\}$ first, then let each element of $\{y_i\}$ multiply the multiplicative inverse of $n$ modulo the domain (337 for the above example). (Remember to reorder $\{y_i\}$)
