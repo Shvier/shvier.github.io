@@ -40,7 +40,7 @@ Next, we evaluate $f$ for each party. Specifically, we compute $f(1),f(2),\dots,
 
 ### Oblivious Transfer
 
-The oblivious transfer is a cryptographic protocol involving two parties, the sender $\mathcal{S}$ and the receiver $\mathcal{R}$, where $\mathcal{S}$ holds some secrets and $\mathcal{R}$ wants to retrieve one or more secrets while $\mathcal{S}$ does not know which secrets $\mathcal{R}$ chose. Here we will see the simplest version, a 1-out-of-2 oblivious transfer based on the discrete logarithm assumption (DLA), a.k.a, Bellare-Micali oblivious transfer[^1].
+The oblivious transfer is a cryptographic protocol involving two parties, the sender $\mathcal{S}$ and the receiver $\mathcal{R}$, where $\mathcal{S}$ holds some secrets and $\mathcal{R}$ wants to retrieve one or more secrets while $\mathcal{S}$ does not know which secrets $\mathcal{R}$ chose. Here we will see the simplest version, a 1-out-of-2 oblivious transfer based on the discrete logarithm assumption (DL), a.k.a, Bellare-Micali oblivious transfer[^1].
 
 Let $\mathbb{G}$ be a group of prime order $p$ with a generator $g$. Let $H$ be a hash function. $\mathcal{S}$ holds two messages $m_0$ and $m_1$, and $\mathcal{R}$ has a selector bit $b\in\{0,1\}$. $\mathcal{R}$ wants to retrieve one of the messages by the selector $b$. $\mathcal{S}$ and $\mathcal{R}$ run the protocol as follows:
 
