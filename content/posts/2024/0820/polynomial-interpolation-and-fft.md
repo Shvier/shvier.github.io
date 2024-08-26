@@ -200,7 +200,7 @@ $$
 and so on and so forth. Interestingly, the product of $M_n^{-1}Y_n$ is exactly the same as the product of $\frac{1}{n}M_nY_n^\prime$, where 
 
 $$
-Y_n=
+Y_n^\prime=
 \begin{bmatrix}
 y_0 \\
 y_{n-1} \\
@@ -211,4 +211,4 @@ y_1
 \end{bmatrix}
 $$
 
-Therefore, the implementation of the IFFT is quite clear: run the FFT for $\{y_i\}$ first, then let each element of $\{y_i\}$ multiply the multiplicative inverse of $n$ modulo the domain (337 for the above example). (Remember to reorder $\{y_i\}$)
+Therefore, the implementation of the IFFT is quite clear: run the FFT for $\{y_i\}$ first, then let each element of $\{y_i\}$ multiply the multiplicative inverse of $n$ modulo the domain ($337$ for the above example). (Remember to reorder $\{y_i\}$)
